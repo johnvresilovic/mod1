@@ -109,7 +109,7 @@ quitButton.addEventListener("click", (e) => {
 });
 
 restartButton.addEventListener("click", (e) => {
-  //resets everything and starts again
+  window.location.reload()
 });
 
 function attack(you, opponent) {
@@ -138,20 +138,16 @@ function attack(you, opponent) {
     }
   }
 
-function counterattack(opponent, you) {
+  function counterattack(opponent, you) {
     if (opponent.damageFactor > you.damageFactor) {
+      you.health = you.health - randomNumber(5, 15);
+      if (you.health < 1) {
+        alert("Aargh!  You have been vanquished.  Click Restart to play again.")
+    } else {
+      alert("You took serious damage.  Your health is down to " + you.health + ".");
+      }
+  } else {
         you.health = you.health - randomNumber(5, 15);
-if (you.health < 1) {
-    alert("Aargh!  You have been vanquished.  Click Restart to play again.")
-    //Refresh everything
-} else {
-          alert("You took serious damage.  Your health is down to " + you.health + ".");
-              alert("You can attack again or quit.");
-        }
-      } else {
-        you.health = you.health - randomNumber(5, 15);
-        alert(
-          "You took minor damage.  Your health is at " + you.health + ".");
-            alert("You can attack again or quit.");
+        alert("You took minor damage.  Your health is at " + you.health + ".");
       }  
 }
