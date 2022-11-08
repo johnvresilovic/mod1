@@ -1,57 +1,14 @@
 class Fighter {
-  constructor(
-    health,
-    strength,
-    speed,
-    agility,
-    intelligence,
-    determination,
-    endurance,
-    skill,
-    damageFactor
-  ) {
+  constructor(health, powerIndex) {
     this.health = health;
-    this.strength = strength;
-    this.speed = speed;
-    this.agility = agility;
-    this.intelligence = intelligence;
-    this.determination = determination;
-    this.endurance = endurance;
-    this.skill = skill;
-    this.damageFactor = damageFactor;
+    this.powerIndex = powerIndex;
   }
 }
 
 const makeFighter = () => {
   let healthValue = 100;
-  let strengthValue = randomNumber(1, 99);
-  let speedValue = randomNumber(1, 99);
-  let agilityValue = randomNumber(1, 99);
-  let intelligenceValue = randomNumber(1, 99);
-  let determinationValue = randomNumber(1, 99);
-  let enduranceValue = randomNumber(1, 99);
-  let skillValue = randomNumber(1, 99);
-  let damageFactorValue = Math.round(
-    (strengthValue +
-      speedValue +
-      agilityValue +
-      intelligenceValue +
-      determinationValue +
-      enduranceValue +
-      skillValue) /
-      7
-  );
-  newFighter = new Fighter(
-    healthValue,
-    strengthValue,
-    speedValue,
-    agilityValue,
-    intelligenceValue,
-    determinationValue,
-    enduranceValue,
-    skillValue,
-    damageFactorValue
-  );
+  let powerIndexValue = randomNumber(1, 100);
+  newFighter = new Fighter(healthValue, powerIndexValue);
 };
 
 function randomNumber(min, max) {
@@ -60,7 +17,7 @@ function randomNumber(min, max) {
 
 let combatants = [];
 
-for (let i = 1; i < 5 + 1; i++) {
+for (let i = 1; i < 6; i++) {
   makeFighter();
   combatants.push(newFighter);
 }
@@ -113,10 +70,10 @@ restartButton.addEventListener("click", (e) => {
 });
 
 function attack(you, opponent) {
-    if (you.damageFactor > opponent.damageFactor) {
+    if (you.powerIndex > opponent.powerIndex) {
       opponent.health = opponent.health - randomNumber(35, 45);
       if (opponent.health < 1) {
-        alert("Opponent " + opponentCounter - 1 + " vanquished!")
+        alert("Opponent " + opponentCounter + " vanquished!")
         opponentCounter += 1
         if (opponentCounter < 5) {
           currentOpponent = combatants[opponentCounter]
@@ -131,7 +88,7 @@ function attack(you, opponent) {
             counterattack(opponent, you)
       }
     } else {
-      opponent.health = opponent.health - randomNumber(35, 45);
+      opponent.health = opponent.health - randomNumber(15, 25);
       alert("You caused minor damage.  Opponent " + opponentCounter + "'s health is down to " + opponent.health + "."  );
           alert("Brace yourself for a counterattack!");
           counterattack(opponent, you)
@@ -139,15 +96,15 @@ function attack(you, opponent) {
   }
 
   function counterattack(opponent, you) {
-    if (opponent.damageFactor > you.damageFactor) {
-      you.health = you.health - randomNumber(5, 15);
+    if (opponent.powerIndex > you.powerIndex) {
+      you.health = you.health - randomNumber(35, 45);
       if (you.health < 1) {
         alert("Aargh!  You have been vanquished.  Click Restart to play again.")
     } else {
       alert("You took serious damage.  Your health is down to " + you.health + ".");
       }
   } else {
-        you.health = you.health - randomNumber(5, 15);
+        you.health = you.health - randomNumber(15, 25);
         alert("You took minor damage.  Your health is at " + you.health + ".");
       }  
 }
