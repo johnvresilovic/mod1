@@ -1,4 +1,4 @@
-This project will be a game called Character Battle, where a user picks a character and then uses it to "fight" the computer's randomly assigned character.  It will build on the Space Battle lab and it will also draw from the Skeleton Factory concepts we saw during a class about factories and objects.  
+This project will be a game called Battle City, where a user's randomly generated character "fights" another randomly generated character.    
 
 This README file will contain explanations of the technologies used and the approach taken, as well as a link to the live site, installation instructions, a list of unsolved problems, etc.
 
