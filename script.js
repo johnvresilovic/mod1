@@ -68,10 +68,10 @@ restartButton.addEventListener("click", (e) => {
 //This section creates the attack-counterattack mechanism.
 
 function attack(you, opponent) {
-  if (you.power > opponent.power) {
+  if (you.power >= opponent.power) {
     opponent.health -= 35;
     if (opponent.health < 1) {
-      alert("Nice shot!  Opponent " + opponentCounter + " has been defeated!");
+      alert("Nice job!  Opponent " + opponentCounter + " has been defeated!");
       opponentCounter += 1;
       if (opponentCounter < 4) {
         currentOpponent = combatants[opponentCounter];
@@ -88,7 +88,7 @@ function attack(you, opponent) {
   } else {
     opponent.health -= 15;
     if (opponent.health < 1) {
-      alert("Nice shot!  Opponent " + opponentCounter + " has been defeated!");
+      alert("Nice job!  Opponent " + opponentCounter + " has been defeated!");
       opponentCounter += 1;
       if (opponentCounter < 4) {
         currentOpponent = combatants[opponentCounter];
