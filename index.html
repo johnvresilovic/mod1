@@ -4,38 +4,43 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
     <title>Take Your Best Shot!</title>
-    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <input type="button" class="myButton" id="attack" value="Attack" />
-    <input type="button" class="myButton" id="restart" value="Restart" />
-    <input type="button" class="myButton" id="quit" value="Quit" />
 
-    <div class="bodyContainer">
+      <div class="image-container">
+        <div class="player-image"></div>
 
-        <div class="mainCharacterView left" >
-                <div class="playerBox">Your Champion</div>
-                <div class="playerImage"></div>
-                <div class="playerStats">
+        <div class="opponent-image"></div>
+      </div>
 
-                    Health: <br>
-                    100 <br>
-                </div>
+      <div class="name-container">
+        <div class="player-name">You</div>
 
+        <div class="opponent-name">Your Opponents</div>
+      </div>
+
+      <div class="stats-container">
+        <div class="player-stats">Health: 100</div>
+
+        <div class="opponent-stats">Health: 100 each!</div>
+      </div>
+
+      <div class="footer">
+        <div class="attack-button">
+          <input type="button" class="game-button" id="attack" value="Attack" />
         </div>
 
-
-        <div class="mainCharacterView right">
-           
-            <div class="enemyBox">His Opponents</div>
-            <div class="enemyImage"></div>
-                <div class="enemyStats">
-                    Health: <br>
-                    100 x 3 <br>
-                </div>
-            
+        <div class="restart-button">
+          <input type="button" class="game-button" id="restart" value="Restart"
+          />
         </div>
+
+        <div class="quit-button">
+          <input type="button" class="game-button" id="quit" value="Quit" />
+        </div>
+      </div>
 
     <script src="./script.js"></script>
   </body>
