@@ -13,6 +13,9 @@ constructor(health, power) {
 
 const playerOne = new Hero(100, randomNumber(10, 90));
 
+
+
+
 class Opponent {
   constructor(health, power) {
       this.health = health;
