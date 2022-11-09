@@ -1,122 +1,124 @@
-class Fighter {
-  constructor(health, powerIndex) {
-    this.health = health;
-    this.powerIndex = powerIndex;
-  }
-}
-
-const makeFighter = () => {
-  let health = 100;
-  let powerIndex = randomNumber(1, 100);
-  newFighter = new Fighter(health, powerIndex);
-};
-
+//This version tries to incorporate some of the bonus features.
+//This section creates the hero and the enemies.
 function randomNumber(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
-let combatants = [];
-
-for (let i = 1; i < 6; i++) {
-  makeFighter();
-  combatants.push(newFighter);
+class Hero {
+constructor(health, power) {
+  this.health = health;
+  this.power = power;
+}
 }
 
-let playerOne = combatants[0];
+const playerOne = new Hero(100, randomNumber(10, 100));
 
-let opponentOne = combatants[1];
+class Opponent {
+  constructor(health, power) {
+      this.health = health;
+      this.power = power;
+    }
+}
 
-let opponentTwo = combatants[2];
+const makeOpponent = () => {
+let healthValue = 100;
+let powerValue = randomNumber(10, 60);
+newOpponent = new Opponent(healthValue, powerValue);
+};
 
-let opponentThree = combatants[3];
+let combatants = [];
 
-let opponentFour = combatants[4];
+for (let i = 1; i < 4 + 1; i++) {
+makeOpponent();
+combatants.push(newOpponent);
+}
 
-let currentOpponent = opponentOne;
+let currentOpponent = combatants[0];
 
 let opponentCounter = 1;
 
 if (opponentCounter == 1) {
   alert(
-    "You are a fighter.  To win this game you must defeat four opponents in sequence.  Everyone begins with a health level of 100.  Each fight proceeds in attack-counterattack fashion until someone's health level falls below 1."
-  );
-
+    "TAKE YOUR BEST SHOT.  You are a fighter.  To win this game you must defeat three opponents in sequence.  All contestants begin with a health level of 100.  Each fight proceeds in attack-counterattack fashion until someone's health level falls below 1.");
   alert(
-    "Your first opponent is ready.  Click Attack to begin.  Click Quit at any time to end the game.  Click Restart to begin a new game."
-  );
-} else {
-  alert("Opponent " + opponentCounter + " is ready.  Click Attack to begin.");
-}
-
+      "Your first opponent is ready.  Click Attack to begin.  Click Quit at any time to end the game.  Click Restart to begin a new game.");
+  } else {
+    alert("Opponent " + opponentCounter + " is ready.  Click Attack to begin.");
+  }
+  
 const attackButton = document.getElementById("attack");
-
+  
 const quitButton = document.getElementById("quit");
-
+  
 const restartButton = document.getElementById("restart");
-
+  
 attackButton.addEventListener("click", (e) => {
-  attack(playerOne, currentOpponent);
-});
-
+    attack(playerOne, currentOpponent);
+  });
+  
 quitButton.addEventListener("click", (e) => {
-  alert("Thanks for playing.  Goodbye.");
-});
-
+    alert("Thanks for playing.  Goodbye.");
+    window.close();
+  });
+  
 restartButton.addEventListener("click", (e) => {
-  window.location.reload();
-});
+    window.location.reload();
+  });
+
+//This section creates the attack-counterattack mechanism.
 
 function attack(you, opponent) {
-  if (you.powerIndex > opponent.powerIndex) {
-    opponent.health -= 37;
+  if (you.power > opponent.power) {
+    opponent.health -= 35;
     if (opponent.health < 1) {
-      alert("Opponent " + opponentCounter + " has been vanquished!");
+      alert("Nice shot!  Opponent " + opponentCounter + " has been defeated!");
       opponentCounter += 1;
-      if (opponentCounter < 5) {
+      if (opponentCounter < 4) {
         currentOpponent = combatants[opponentCounter];
-        alert(
-          "Opponent " + opponentCounter + " awaits you.  Click Attack to begin."
-        );
+        alert("Opponent " + opponentCounter + " awaits you.  Click Attack to begin.");
       } else {
-        alert("You've defeated the final opponent!  YOU WIN!!");
+        alert("You've beaten the final opponent!  YOU WIN!!");
       }
     } else {
       alert(
-        "You caused serious damage.  Opponent " +
-          opponentCounter +
-          "'s health is down to " +
-          opponent.health +
-          "."
-      );
+        "You caused serious damage.  Opponent " + opponentCounter + "'s health is down to " + opponent.health + ".");
       alert("Brace yourself for a counterattack!");
       counterattack(opponent, you);
     }
   } else {
-    opponent.health -= 23;
+    opponent.health -= 15;
+    if (opponent.health < 1) {
+      alert("Nice shot!  Opponent " + opponentCounter + " has been defeated!");
+      opponentCounter += 1;
+      if (opponentCounter < 4) {
+        currentOpponent = combatants[opponentCounter];
+        alert("Opponent " + opponentCounter + " awaits you.  Click Attack to begin.");
+      } else {
+        alert("You've beaten the final opponent!  YOU WIN!!");
+      }
+  } else {
     alert(
-      "You caused minor damage.  Opponent " +
-        opponentCounter +
-        "'s health is down to " +
-        opponent.health +
-        "."
-    );
+      "You caused minor damage.  Opponent " + opponentCounter + "'s health is down to " + opponent.health + ".");
     alert("Brace yourself for a counterattack!");
     counterattack(opponent, you);
   }
 }
+}
 
 function counterattack(opponent, you) {
-  if (opponent.powerIndex > you.powerIndex) {
-    you.health -= 13;
+  if (opponent.power > you.power) {
+    you.health -= 35;
     if (you.health < 1) {
-      alert("Aargh!  You have been vanquished.  Click Restart to play again.");
+      alert("Aargh!  You have been defeated.  Click Restart to play again.");
     } else {
-      alert(
-        "You took serious damage.  Your health is down to " + you.health + "."
-      );
+      alert("You took serious damage.  Your health is down to " + you.health + ".  Launch your next attack!");
     }
   } else {
-    you.health -= 9;
-    alert("You took minor damage.  Your health is at " + you.health + ".");
+    you.health -= 15;
+    if (you.health < 1) {
+      alert("Aargh!  You have been defeated.  Click Restart to play again.");
+    } else {
+    alert("You took minor damage.  Your health is at " + you.health + ".  Launch your next attack!");
+    }
   }
 }

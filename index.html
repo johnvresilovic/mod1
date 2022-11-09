@@ -1,17 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Battle City</title>
-    <link rel="stylesheet" href="./styles.css">
-</head>
-<body>
-    <input type="button" class='myButton' id="attack" value="Attack">
-    <input type="button" class='myButton' id="quit" value="Quit">
-    <input type="button" class='myButton' id="restart" value="Restart">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TAKE YOUR BEST SHOT</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <input type="button" class="myButton" id="attack" value="Attack" />
+    <input type="button" class="myButton" id="restart" value="Restart" />
+    <input type="button" class="myButton" id="quit" value="Quit" />
 
-    <script src="./script.js" async defer></script>
-</body>
+    <div class="bodyContainer">
+
+        <div class="mainCharacterView left" >
+                <div class="nameBox">You</div>
+                <div class="playerImage"></div>
+                <div class="playerStats">
+
+                    Health : 100 <br>
+                    Power : ? <br>
+
+                </div>
+
+        </div>
+
+
+        <div class="mainCharacterView right">
+           
+            <div class="nameBox">Opponent</div>
+            <div class="enemyImage"></div>
+                <div class="enemyStats">
+                    Health : 100 <br>
+                    Power : ? <br>
+    
+                </div>
+            
+        </div>
+
+    <script src="./script.js"></script>
+  </body>
 </html>
