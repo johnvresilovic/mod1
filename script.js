@@ -11,7 +11,7 @@ constructor(health, power) {
 }
 }
 
-const playerOne = new Hero(100, randomNumber(10, 100));
+const playerOne = new Hero(100, randomNumber(10, 90));
 
 class Opponent {
   constructor(health, power) {
@@ -25,6 +25,13 @@ let healthValue = 100;
 let powerValue = randomNumber(10, 60);
 newOpponent = new Opponent(healthValue, powerValue);
 };
+
+// Next two declarations are for testing purposes:
+
+// const playerOne = new Hero(100, 100)
+
+// const playerOne = new Hero(20, 20)
+
 
 let combatants = [];
 
@@ -69,7 +76,8 @@ restartButton.addEventListener("click", (e) => {
 
 function attack(you, opponent) {
   if (you.power >= opponent.power) {
-    opponent.health -= 35;
+    let healthLoss = randomNumber(30, 40)
+    opponent.health -= healthLoss;
     if (opponent.health < 1) {
       alert("Nice job!  Opponent " + opponentCounter + " has been defeated!");
       opponentCounter += 1;
@@ -86,7 +94,8 @@ function attack(you, opponent) {
       counterattack(opponent, you);
     }
   } else {
-    opponent.health -= 15;
+    let healthLoss = randomNumber(10, 20)
+    opponent.health -= healthLoss;
     if (opponent.health < 1) {
       alert("Nice job!  Opponent " + opponentCounter + " has been defeated!");
       opponentCounter += 1;
@@ -107,14 +116,16 @@ function attack(you, opponent) {
 
 function counterattack(opponent, you) {
   if (opponent.power > you.power) {
-    you.health -= 35;
+    let healthLoss = randomNumber(30, 40)
+    you.health -= healthLoss;
     if (you.health < 1) {
       alert("Aargh!  You have been defeated.  Click Restart to play again.");
     } else {
       alert("You took serious damage.  Your health is down to " + you.health + ".  Launch your next attack!");
     }
   } else {
-    you.health -= 15;
+    let healthLoss = randomNumber(10, 20)
+    you.health -= healthLoss;
     if (you.health < 1) {
       alert("Aargh!  You have been defeated.  Click Restart to play again.");
     } else {
