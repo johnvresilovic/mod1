@@ -43,6 +43,12 @@ let combatants = [];
     } else {
       alert("Opponent " + opponentCounter + " is ready.  Click Attack to begin.");
     }
+
+let newPlayerHealth = document.getElementById('player-stats');
+
+let newOpponentName = document.getElementById('opponent-name');
+
+let newOpponentHealth = document.getElementById('opponent-stats');
     
   const attackButton = document.getElementById("attack");
     
@@ -63,18 +69,19 @@ let combatants = [];
       window.location.reload();
     });
   
-  //This section creates the attack-counterattack mechanism.
-  
-  function attack(you, opponent) {
+   function attack(you, opponent) {
     if (you.power >= opponent.power) {
       let healthLoss = randomNumber(30, 40)
       opponent.health -= healthLoss;
+      newOpponentHealth.innerHTML = 'Health: ' + opponent.health;
       if (opponent.health < 1) {
         alert("Nice job!  Opponent " + opponentCounter + " has been defeated!");
         opponentCounter += 1;
         if (opponentCounter < 4) {
           currentOpponent = combatants[opponentCounter];
           alert("Opponent " + opponentCounter + " awaits you.  Click Attack to begin.");
+          newOpponentName.innerHTML = 'Opponent ' + opponentCounter;
+          newOpponentHealth.innerHTML = 'Health: 100';
         } else {
           alert("You've beaten the final opponent!  YOU WIN!!");
         }
@@ -87,12 +94,15 @@ let combatants = [];
     } else {
       let healthLoss = randomNumber(10, 20)
       opponent.health -= healthLoss;
+      newOpponentHealth.innerHTML = 'Health: ' + opponent.health;
       if (opponent.health < 1) {
         alert("Nice job!  Opponent " + opponentCounter + " has been defeated!");
         opponentCounter += 1;
         if (opponentCounter < 4) {
           currentOpponent = combatants[opponentCounter];
           alert("Opponent " + opponentCounter + " awaits you.  Click Attack to begin.");
+          newOpponentName.innerHTML = 'Opponent ' + opponentCounter;
+          newOpponentHealth.innerHTML = 'Health: 100';
         } else {
           alert("You've beaten the final opponent!  YOU WIN!!");
         }
@@ -109,6 +119,7 @@ let combatants = [];
     if (opponent.power > you.power) {
       let healthLoss = randomNumber(30, 40)
       you.health -= healthLoss;
+      newPlayerHealth.innerHTML = 'Health: ' + you.health;
       if (you.health < 1) {
         alert("Aargh!  You have been defeated.  Click Restart to play again.");
       } else {
@@ -117,6 +128,7 @@ let combatants = [];
     } else {
       let healthLoss = randomNumber(10, 20)
       you.health -= healthLoss;
+      newPlayerHealth.innerHTML = 'Health: ' + you.health;
       if (you.health < 1) {
         alert("Aargh!  You have been defeated.  Click Restart to play again.");
       } else {
