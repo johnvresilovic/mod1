@@ -6,9 +6,9 @@ class Fighter {
 }
 
 const makeFighter = () => {
-  let healthValue = 100;
-  let powerIndexValue = randomNumber(1, 100);
-  let newFighter = new Fighter(healthValue, powerIndexValue);
+  let health = 100;
+  let powerIndex = randomNumber(1, 100);
+  newFighter = new Fighter(health, powerIndex);
 };
 
 function randomNumber(min, max) {
@@ -45,9 +45,7 @@ if (opponentCounter == 1) {
     "Your first opponent is ready.  Click Attack to begin.  Click Quit at any time to end the game.  Click Restart to begin a new game."
   );
 } else {
-  alert(
-    "Opponent " + opponentCounter + " is ready.  Click Attack to begin."
-  );
+  alert("Opponent " + opponentCounter + " is ready.  Click Attack to begin.");
 }
 
 const attackButton = document.getElementById("attack");
@@ -65,32 +63,45 @@ quitButton.addEventListener("click", (e) => {
 });
 
 restartButton.addEventListener("click", (e) => {
-  window.location.reload()
+  window.location.reload();
 });
 
 function attack(you, opponent) {
   if (you.powerIndex > opponent.powerIndex) {
     opponent.health = opponent.health - 37;
     if (opponent.health < 1) {
-      alert("Opponent " + opponentCounter + " has been vanquished!")
-      opponentCounter += 1
+      alert("Opponent " + opponentCounter + " has been vanquished!");
+      opponentCounter += 1;
       if (opponentCounter < 5) {
-        currentOpponent = combatants[opponentCounter]
-        alert("Opponent " + opponentCounter + " awaits you.  Click Attack to begin.");
-      }  else {
-        alert("You've defeated the final opponent!  YOU WIN!!")
+        currentOpponent = combatants[opponentCounter];
+        alert(
+          "Opponent " + opponentCounter + " awaits you.  Click Attack to begin."
+        );
+      } else {
+        alert("You've defeated the final opponent!  YOU WIN!!");
       }
     } else {
       alert(
-        "You caused serious damage.  Opponent " + opponentCounter + "'s health is down to " + opponent.health + ".")
-          alert("Brace yourself for a counterattack!");
-          counterattack(opponent, you)
+        "You caused serious damage.  Opponent " +
+          opponentCounter +
+          "'s health is down to " +
+          opponent.health +
+          "."
+      );
+      alert("Brace yourself for a counterattack!");
+      counterattack(opponent, you);
     }
   } else {
     opponent.health = opponent.health - 23;
-    alert("You caused minor damage.  Opponent " + opponentCounter + "'s health is down to " + opponent.health + "."  );
-        alert("Brace yourself for a counterattack!");
-        counterattack(opponent, you)
+    alert(
+      "You caused minor damage.  Opponent " +
+        opponentCounter +
+        "'s health is down to " +
+        opponent.health +
+        "."
+    );
+    alert("Brace yourself for a counterattack!");
+    counterattack(opponent, you);
   }
 }
 
@@ -98,12 +109,14 @@ function counterattack(opponent, you) {
   if (opponent.powerIndex > you.powerIndex) {
     you.health = you.health - 13;
     if (you.health < 1) {
-      alert("Aargh!  You have been vanquished.  Click Restart to play again.")
-  } else {
-    alert("You took serious damage.  Your health is down to " + you.health + ".");
+      alert("Aargh!  You have been vanquished.  Click Restart to play again.");
+    } else {
+      alert(
+        "You took serious damage.  Your health is down to " + you.health + "."
+      );
     }
-} else {
-      you.health = you.health - 9;
-      alert("You took minor damage.  Your health is at " + you.health + ".");
-    }  
+  } else {
+    you.health = you.health - 9;
+    alert("You took minor damage.  Your health is at " + you.health + ".");
+  }
 }
