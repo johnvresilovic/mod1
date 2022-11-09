@@ -68,7 +68,7 @@ restartButton.addEventListener("click", (e) => {
 
 function attack(you, opponent) {
   if (you.powerIndex > opponent.powerIndex) {
-    opponent.health = opponent.health - 37;
+    opponent.health -= 37;
     if (opponent.health < 1) {
       alert("Opponent " + opponentCounter + " has been vanquished!");
       opponentCounter += 1;
@@ -92,7 +92,7 @@ function attack(you, opponent) {
       counterattack(opponent, you);
     }
   } else {
-    opponent.health = opponent.health - 23;
+    opponent.health -= 23;
     alert(
       "You caused minor damage.  Opponent " +
         opponentCounter +
@@ -107,7 +107,7 @@ function attack(you, opponent) {
 
 function counterattack(opponent, you) {
   if (opponent.powerIndex > you.powerIndex) {
-    you.health = you.health - 13;
+    you.health -= 13;
     if (you.health < 1) {
       alert("Aargh!  You have been vanquished.  Click Restart to play again.");
     } else {
@@ -116,7 +116,7 @@ function counterattack(opponent, you) {
       );
     }
   } else {
-    you.health = you.health - 9;
+    you.health -= 9;
     alert("You took minor damage.  Your health is at " + you.health + ".");
   }
 }
