@@ -35,13 +35,11 @@ let currentOpponent = combatants[0];
 
 let opponentCounter = 1;
 
-let messageBoard = document.getElementById('message-board')
-
-// messageBoard.innerHTML = "vs"
+// let messageBoard = document.getElementById('message-board')
 
 if (opponentCounter == 1) {
   alert(
-    "TAKE YOUR BEST SHOT.  You are a fighter.  To win this game you must defeat three opponents in sequence.  All contestants begin with a health level of 100.  Each fight proceeds in attack-counterattack fashion until someone's health level falls below 1."
+    "You are a fighter.  To win this game you must defeat three opponents in sequence.  All contestants begin with a health level of 100.  Each fight proceeds in attack-counterattack fashion until someone's health level falls below 1."
   );
   alert(
     "Your first opponent is ready.  Click Attack to begin.  Click Quit at any time to end the game.  Click Restart to begin a new game."
