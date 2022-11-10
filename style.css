@@ -1,6 +1,6 @@
 * {
   background-color: deepskyblue;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Press Start 2P", cursive;
 }
 
 .header {
@@ -52,15 +52,15 @@
   justify-content: center;
   align-items: center;
   border: 5px solidblack;
-  width: 30vw;
+  width: 20vw;
   height: 30vh;
-  text-align:center;
+  text-align: center;
   border-radius: 10px;
   box-shadow: 0px 0px 10px 5px black;
   background-color: brown;
   color: whitesmoke;
-  font-size: 80px;
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 54px;
+  font-weight: bold;
 }
 
 .opponent-name {
@@ -76,7 +76,7 @@
   background-color: forestgreen;
   color: whitesmoke;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 18px;
 }
 
 .player-image {
@@ -125,7 +125,7 @@
   background-color: forestgreen;
   color: whitesmoke;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 18px;
 }
 
 .opponent-stats {
@@ -141,7 +141,7 @@
   background-color: forestgreen;
   color: whitesmoke;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 18px;
 }
 
 .footer {
