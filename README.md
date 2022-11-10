@@ -12,9 +12,9 @@ The rounds continue until one fighter's health falls below 1.  If You loses the 
 
 You also has the options of restarting the game (i.e. having new power values assigned to all four fighters) and of quitting the game.
 
-There are no installation instructions.  Simply navigate to the URL which will soon be provided below.
+There are no installation instructions.  Simply navigate to the URL below.
 
-The live site for this game IS A WORK IN PROGRESS.  (Caps are for my own benefit.)
+The live site for this game is https://johnvresilovic.github.io/mod1/
 
 At this moment there are no unsolved problems.  In the game I mean. 
 
