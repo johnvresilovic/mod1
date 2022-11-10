@@ -8,39 +8,37 @@
     <title>Take Your Best Shot!</title>
   </head>
   <body>
+    <div class="image-container">
+      <div class="player-image"></div>
 
-      <div class="image-container">
-        <div class="player-image"></div>
+      <div class="opponent-image"></div>
+    </div>
 
-        <div class="opponent-image"></div>
+    <div class="name-container">
+      <div class="player-name">You</div>
+
+      <div class="opponent-name" id="opponent-name">Opponent 1</div>
+    </div>
+
+    <div class="stats-container">
+      <div class="player-stats" id="player-stats">Health: 100</div>
+
+      <div class="opponent-stats" id="opponent-stats">Health: 100</div>
+    </div>
+
+    <div class="footer">
+      <div class="attack-button">
+        <input type="button" class="game-button" id="attack" value="Attack" />
       </div>
 
-      <div class="name-container">
-        <div class="player-name">You</div>
-
-        <div class="opponent-name" id="opponent-name">Opponent 1</div>
+      <div class="restart-button">
+        <input type="button" class="game-button" id="restart" value="Restart" />
       </div>
 
-      <div class="stats-container">
-        <div class="player-stats" id="player-stats">Health: 100</div>
-
-        <div class="opponent-stats" id="opponent-stats">Health: 100</div>
+      <div class="quit-button">
+        <input type="button" class="game-button" id="quit" value="Quit" />
       </div>
-
-      <div class="footer">
-        <div class="attack-button">
-          <input type="button" class="game-button" id="attack" value="Attack" />
-        </div>
-
-        <div class="restart-button">
-          <input type="button" class="game-button" id="restart" value="Restart"
-          />
-        </div>
-
-        <div class="quit-button">
-          <input type="button" class="game-button" id="quit" value="Quit" />
-        </div>
-      </div>
+    </div>
 
     <script src="./script.js"></script>
   </body>
