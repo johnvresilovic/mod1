@@ -92,6 +92,7 @@ function attack(you, opponent) {
         alert("You've beaten the final opponent!");
         messageBoard.innerHTML = "YOU WIN!!";
         newOpponentHealth.innerHTML = "Health: XXX";
+        attackButton.style.color = "gray";
       }
     } else {
       alert(
@@ -122,6 +123,7 @@ function attack(you, opponent) {
         alert("You've beaten the final opponent!");
         messageBoard.innerHTML = "YOU WIN!!";
         newOpponentHealth.innerHTML = "Health: XXX";
+        attackButton.style.color = "gray";
       }
     } else {
       alert(
@@ -144,6 +146,7 @@ function counterattack(opponent, you) {
     newPlayerHealth.innerHTML = "Health: " + you.health;
     if (you.health < 1) {
       alert("Aargh!  You have been defeated.  Click Restart to play again.");
+      attackButton.style.color = "gray";
     } else {
       alert(
         "You took serious damage.  Your health is down to " +
@@ -157,6 +160,7 @@ function counterattack(opponent, you) {
     newPlayerHealth.innerHTML = "Health: " + you.health;
     if (you.health < 1) {
       alert("Aargh!  You have been defeated.  Click Restart to play again.");
+      attackButton.style.color = "gray";
     } else {
       alert(
         "You took minor damage.  Your health is at " +
