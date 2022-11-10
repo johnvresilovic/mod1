@@ -1,12 +1,21 @@
-This project will be a game called Battle, where a user's randomly generated character "fights" another randomly generated character.    
+This is a game called Take Your Best Shot, where the user's character (aka You) engages in simulated combat with three automated characters (Opponents 1-3) in sequence.    
 
-This README file will contain explanations of the technologies used and the approach taken, as well as a link to the live site, installation instructions, a list of unsolved problems, etc.
+I have used HTML, CSS and JavaScript to make the game. 
 
-I'll use HTML, CSS and JavaScript to make the game.  
+At the start of the game all four characters are given health values of 100 and power values that are randomly generated.  The You character gets a power value between 10 and 90, whereas the opponents get values between 10 and 60.  This owes to 1) the fact that there are three opponents for You to fight, and 2) the fact that it gives You a good chance to win, which seems advantageous for demonstration purposes.  After this project has been submitted and presented I may change the code to make the game harder to win.  Because I'm still bitter about dropping all those hard-earned quarters into arcade games I couldn't beat.  
 
-My approach:  At the start of a game five characters are generated: Player One (representing the user) and four opponents.  Each character has a health level of 100 and a power index (randomly generated) somewhere between 1 and 99.  Player One fights each opponent in turn.  Every fight begins with Player One attacking the opponent, followed by the opponent counterattacking.  Each attack or counterattack lowers the health level of the target.  If the attacker's power index is greater than the target's, the reduction in health level is between 35 and 45 points.  Otherwise, the reduction is between 15 and 25 points. 
+Each fight is a series of rounds.  Each round is an attack-counterattack sequence, with You always going first.  
 
-The attack-counterattack sequences continue until one player's health falls below 1.  If Player One loses the fight, the game is over.  If Player One wins, Player One fights the next opponent.  If Player One defeats all four opponents, the user wins the game.
+The outcome of every round hinges on the fighters' power values.  The fighter with the higher value causes greater reduction of the opponent's health.  If You has the greater power value, then their attacks/counterattacks reduce the opponent's health by 30 - 40 points each time; whereas the opponent's attacks/counterattacks reduce You's health by 10 - 20 points.  The fighters' health levels are updated after each round.
 
-The live site for this game is: https://https://johnvresilovic.github.io/mod1
+The rounds continue until one fighter's health falls below 1.  If You loses the fight, the game is over.  If You wins, they fight the next opponent.  If You defeats all three opponents, You wins the game.
 
+You also has the options of restarting the game (i.e. having new power values assigned to all four fighters) and of quitting the game.
+
+There are no installation instructions.  Simply navigate to the URL which will soon be provided below.
+
+The live site for this game IS A WORK IN PROGRESS.  (Caps are for my own benefit.)
+
+At this moment there are no unsolved problems.  In the game I mean. 
+
+The author thanks the Nintendo Corporation of America for not suing him (to date) and reminds the company that he will be available for work in February 2023.
