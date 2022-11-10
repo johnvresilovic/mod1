@@ -35,6 +35,10 @@ let currentOpponent = combatants[0];
 
 let opponentCounter = 1;
 
+let messageBoard = document.getElementById('message-board')
+
+// messageBoard.innerHTML = "vs"
+
 if (opponentCounter == 1) {
   alert(
     "TAKE YOUR BEST SHOT.  You are a fighter.  To win this game you must defeat three opponents in sequence.  All contestants begin with a health level of 100.  Each fight proceeds in attack-counterattack fashion until someone's health level falls below 1."
@@ -63,8 +67,10 @@ attackButton.addEventListener("click", (e) => {
 });
 
 quitButton.addEventListener("click", (e) => {
-  alert("Thanks for playing.  Goodbye.");
-  window.close();
+  if (confirm("Are you sure you want to quit?")) {
+    alert("Thanks for playing!  Goodbye.");
+    window.location = 'https://www.perscholas.org';
+}
 });
 
 restartButton.addEventListener("click", (e) => {
@@ -116,6 +122,7 @@ function attack(you, opponent) {
         newOpponentHealth.innerHTML = "Health: 100";
       } else {
         alert("You've beaten the final opponent!  YOU WIN!!");
+        newOpponentHealth.innerHTML = "Health: XXX";
       }
     } else {
       alert(
