@@ -16,8 +16,8 @@ There are no installation instructions.  Simply navigate to the URL below.
 
 The live site for this game is https://johnvresilovic.github.io/mod1/
 
-At this moment there are no unsolved problems.  In the game I mean. 
-
-The author thanks the Nintendo Corporation of America for not suing him (to date) and reminds the company that he will be available for work in February 2023.
+Unsolved problems:  
+1. How to use modals instead of alerts for in-game messaging. 
+2. How to render the game unplayable (without restarting or refreshing the browser) after a player quits.
 
 Contact info: johnvresilovic@protonmail.com
