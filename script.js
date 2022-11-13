@@ -54,6 +54,8 @@ let newOpponentHealth = document.getElementById("opponent-stats");
 
 let messageBoard = document.getElementById("message-board");
 
+let quitCounter = 0;
+
 const attackButton = document.getElementById("attack");
 
 const quitButton = document.getElementById("quit");
@@ -61,12 +63,18 @@ const quitButton = document.getElementById("quit");
 const restartButton = document.getElementById("restart");
 
 attackButton.addEventListener("click", (e) => {
-  attack(playerOne, currentOpponent);
+  if (quitCounter == 0) {
+    attack(playerOne, currentOpponent);
+  } else {
+    alert("Press Restart to play again.")
+  }
 });
 
 quitButton.addEventListener("click", (e) => {
   alert("Thanks for playing!  Goodbye.");
-  window.location.reload();
+  quitCounter = 1;
+  attackButton.style.color = "gray";
+  attackButton.style.cursor = "default";
 });
 
 restartButton.addEventListener("click", (e) => {
@@ -90,6 +98,7 @@ function attack(you, opponent) {
         newOpponentHealth.innerHTML = "Health: 100";
       } else {
         alert("You've beaten the final opponent!");
+        quitCounter = 1;
         messageBoard.innerHTML = "YOU WIN!!";
         newOpponentHealth.innerHTML = "Health: XXX";
         attackButton.style.color = "gray";
@@ -122,6 +131,7 @@ function attack(you, opponent) {
       } else {
         alert("You've beaten the final opponent!");
         messageBoard.innerHTML = "YOU WIN!!";
+        quitCounter = 1;
         newOpponentHealth.innerHTML = "Health: XXX";
         attackButton.style.color = "gray";
       }
