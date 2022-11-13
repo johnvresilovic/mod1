@@ -66,7 +66,7 @@ attackButton.addEventListener("click", (e) => {
 
 quitButton.addEventListener("click", (e) => {
   alert("Thanks for playing!  Goodbye.");
-  window.location = "https://www.perscholas.org";
+  window.location.reload();
 });
 
 restartButton.addEventListener("click", (e) => {
