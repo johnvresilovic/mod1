@@ -66,7 +66,7 @@ attackButton.addEventListener("click", (e) => {
   if (quitCounter == 0) {
     attack(playerOne, currentOpponent);
   } else {
-    alert("Press Restart to play again.")
+    alert("Press Restart to play again.");
   }
 });
 
