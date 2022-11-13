@@ -18,6 +18,6 @@ The live site for this game is https://johnvresilovic.github.io/mod1/
 
 Unsolved problems:  
 1. How to use modals instead of alerts for in-game messaging. 
-2. How to reset the game variables after a player clicks Quit.
+2. How to reset the game variables after a player clicks Quit.  
 
 Contact info: johnvresilovic@protonmail.com

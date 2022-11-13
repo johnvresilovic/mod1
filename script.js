@@ -93,6 +93,7 @@ function attack(you, opponent) {
         messageBoard.innerHTML = "YOU WIN!!";
         newOpponentHealth.innerHTML = "Health: XXX";
         attackButton.style.color = "gray";
+        attackButton.style.cursor = "default";
       }
     } else {
       alert(
@@ -100,9 +101,8 @@ function attack(you, opponent) {
           opponentCounter +
           "'s health is down to " +
           opponent.health +
-          "."
+          ".  Now brace yourself for a counterattack!"
       );
-      alert("Brace yourself for a counterattack!");
       counterattack(opponent, you);
     }
   } else {
@@ -131,9 +131,8 @@ function attack(you, opponent) {
           opponentCounter +
           "'s health is down to " +
           opponent.health +
-          "."
+          ".  Now brace yourself for a counterattack!"
       );
-      alert("Brace yourself for a counterattack!");
       counterattack(opponent, you);
     }
   }
