@@ -1,5 +1,6 @@
 # Take Your Best Shot
 
+## Description
 This is a game in which the user's character (aka You) engages in simulated combat with three automated characters (Opponents 1-3) in sequence.    
 
 I have used HTML, CSS and JavaScript to make the game.  Below is a picture of the home screen.
@@ -18,6 +19,22 @@ The rounds continue until one fighter's health falls below 1.  If You loses the 
 
 You also has the options of starting a new game and quitting the game.
 
+## History
+This game was created to meet the requirements of a project assignment in a Per Scholas software engineering boot camp.  My first idea for the project was a game in which the user picks a character from a list (I was thinking along the lines of skeleton, vampire, werewolf, etc.) and then has their character "fight" a computer-generated character from the same list or an entirely different one (orc, elf, goblin; Sith Lord, Jedi Knight, stormtrooper; the possibilities are many).  The fighting would mirror the mechanisms of TYBS. 
+
+It seemed (and still seems) like a good idea.  But I couldn't get excited about it and I quickly abandoned it in favor of TYBS.  Simpler setup, simpler algorithm for determining who wins each fight. 
+
+It was not my intention to borrow imagery from Nintendo for TYBS, but representing the user's character with a certain beloved plumber gave the game a light-hearted feel that appealed to me.  After that it made sense to represent You's opponents with a trio of antagonists from the same magical kingdom.  It also encouraged me to limit the game to three opponents.  I'd originally planned on four to six.
+
+Coding the attack-counterattack mechanism was easier than I expected it to be.  I was aided by being able to refer to an earlier project with a similar mechanism.  Nested if statements are not much fun to stare at for hours at a time, but eventually, line by line, this part of the game came together and held up to testing.
+
+The bigger challenge was getting the look right.  I drew what I wanted on a piece of paper: rectangles within rectangles, a collection of containers for my images and text, plus three buttons to control the game.  Initially I calculated I'd need 14 divs; I think the final number is a bit smaller.  I created my divs in HTML and then set about styling them with CSS.  Reproducing my hand-drawn layout took time and patience.
+
+The final task was to incorporate event listeners and DOM manipulation.  With that functionality was in place, TYBS started to feel like a real game.
+
+I considered using modals instead of alerts for in-game messaging, but I was never happy with how the modals fit into the larger scheme of the game.  I may well revisit the idea in the future.
+
+## Miscellaneous
 To play the game, navigate to the URL below.  If you want access to the files you can fork and clone this repository to your machine.
 
 The live site for this game is https://johnvresilovic.github.io/mod1/
