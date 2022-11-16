@@ -99,7 +99,7 @@ function attack(you, opponent) {
       } else {
         alert("You've beaten the final opponent!");
         quitCounter = 1;
-        messageBoard.innerHTML = "YOU WIN!";
+        messageBoard.innerHTML = "YOU WIN";
         newOpponentHealth.innerHTML = "Health: XXX";
         attackButton.style.color = "gray";
         attackButton.style.cursor = "not-allowed";
@@ -130,7 +130,7 @@ function attack(you, opponent) {
         newOpponentHealth.innerHTML = "Health: 100";
       } else {
         alert("You've beaten the final opponent!");
-        messageBoard.innerHTML = "YOU WIN!";
+        messageBoard.innerHTML = "YOU WIN";
         quitCounter = 1;
         newOpponentHealth.innerHTML = "Health: XXX";
         attackButton.style.color = "gray";
