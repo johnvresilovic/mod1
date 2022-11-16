@@ -32,7 +32,7 @@ The bigger challenge was getting the look right.  I drew what I wanted on a piec
 
 The final task was to incorporate event listeners and DOM manipulation.  With that functionality was in place, TYBS started to feel like a real game.
 
-I considered using modals instead of alerts for in-game messaging, but I was never happy with how the modals fit into the larger scheme of the game.  I may well revisit the idea in the future.
+I considered using modals instead of alerts for in-game messaging, but I was never happy with how the modals fit into the larger scheme of the game.  I may well revisit the idea in the future.  In the meantime, there is a 'mod1a' repo containing a version of the game that uses DOM manipulation instead of alerts.  The messaging is a bit wonky but it is functional.
 
 ## Miscellaneous
 To play the game, navigate to the URL below.  If you want access to the files you can fork and clone this repository to your machine.
