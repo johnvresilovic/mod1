@@ -102,7 +102,7 @@ function attack(you, opponent) {
         messageBoard.innerHTML = "YOU WIN!!";
         newOpponentHealth.innerHTML = "Health: XXX";
         attackButton.style.color = "gray";
-        attackButton.style.cursor = "default";
+        attackButton.style.cursor = "not-allowed";
       }
     } else {
       alert(
@@ -134,6 +134,7 @@ function attack(you, opponent) {
         quitCounter = 1;
         newOpponentHealth.innerHTML = "Health: XXX";
         attackButton.style.color = "gray";
+        attackButton.style.cursor = "not-allowed";
       }
     } else {
       alert(
@@ -156,6 +157,7 @@ function counterattack(opponent, you) {
     if (you.health < 1) {
       alert("Aargh!  You have been defeated.  Click Restart to play again.");
       attackButton.style.color = "gray";
+      attackButton.style.cursor = "not-allowed";
     } else {
       alert(
         "You took serious damage.  Your health is down to " +
@@ -170,6 +172,7 @@ function counterattack(opponent, you) {
     if (you.health < 1) {
       alert("Aargh!  You have been defeated.  Click Restart to play again.");
       attackButton.style.color = "gray";
+      attackButton.style.cursor = "not-allowed";
     } else {
       alert(
         "You took minor damage.  Your health is at " +
