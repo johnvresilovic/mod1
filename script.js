@@ -156,6 +156,7 @@ function counterattack(opponent, you) {
     newPlayerHealth.innerHTML = "Health: " + you.health;
     if (you.health < 1) {
       alert("Aargh!  You have been defeated.  Click Restart to play again.");
+      newPlayerHealth.innerHTML = "Health: XXX";
       attackButton.style.color = "gray";
       attackButton.style.cursor = "not-allowed";
     } else {
@@ -171,6 +172,7 @@ function counterattack(opponent, you) {
     newPlayerHealth.innerHTML = "Health: " + you.health;
     if (you.health < 1) {
       alert("Aargh!  You have been defeated.  Click Restart to play again.");
+      newPlayerHealth.innerHTML = "Health: XXX";
       attackButton.style.color = "gray";
       attackButton.style.cursor = "not-allowed";
     } else {
