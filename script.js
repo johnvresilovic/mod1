@@ -74,7 +74,7 @@ quitButton.addEventListener("click", (e) => {
   alert("Thanks for playing!  Goodbye.");
   quitCounter = 1;
   attackButton.style.color = "gray";
-  attackButton.style.cursor = "default";
+  attackButton.style.cursor = "not-allowed";
 });
 
 restartButton.addEventListener("click", (e) => {
