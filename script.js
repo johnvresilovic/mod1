@@ -1,7 +1,9 @@
+//random number generator which will be used to determine outcomes of fighting rounds
 function randomNumber(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
+//create protagonist
 class Hero {
   constructor(health, power) {
     this.health = health;
@@ -11,6 +13,7 @@ class Hero {
 
 const playerOne = new Hero(100, randomNumber(10, 90));
 
+//create three opponents and store them in an array
 class Opponent {
   constructor(health, power) {
     this.health = health;
@@ -33,6 +36,7 @@ for (let i = 1; i < 4 + 1; i++) {
 
 let currentOpponent = combatants[0];
 
+//opening sequence that explains the rules and preps you for the first opponent (if you're just starting) or preps you for the next opponent (if you've defeated one or two opponents already)
 let opponentCounter = 1;
 
 if (opponentCounter == 1) {
@@ -46,6 +50,7 @@ if (opponentCounter == 1) {
   alert("Opponent " + opponentCounter + " is ready.  Click Attack to begin.");
 }
 
+//these variables will be used for DOM manipulation
 let newPlayerHealth = document.getElementById("player-stats");
 
 let newOpponentName = document.getElementById("opponent-name");
@@ -54,8 +59,10 @@ let newOpponentHealth = document.getElementById("opponent-stats");
 
 let messageBoard = document.getElementById("message-board");
 
+//this variable gets set to 1 when you click quit or when you lose a game
 let quitCounter = 0;
 
+//creates event listeners for the three buttons
 const attackButton = document.getElementById("attack");
 
 const quitButton = document.getElementById("quit");
@@ -81,6 +88,7 @@ restartButton.addEventListener("click", (e) => {
   window.location.reload();
 });
 
+//game play flows through the two functions below
 function attack(you, opponent) {
   if (you.power >= opponent.power) {
     let healthLoss = randomNumber(30, 40);
@@ -156,6 +164,7 @@ function counterattack(opponent, you) {
     newPlayerHealth.innerHTML = "Health: " + you.health;
     if (you.health < 1) {
       alert("Aargh!  You have been defeated.  Click Restart to play again.");
+      messageBoard.innerHTML = "Play again soon";
       newPlayerHealth.innerHTML = "Health: XXX";
       attackButton.style.color = "gray";
       attackButton.style.cursor = "not-allowed";
@@ -172,6 +181,7 @@ function counterattack(opponent, you) {
     newPlayerHealth.innerHTML = "Health: " + you.health;
     if (you.health < 1) {
       alert("Aargh!  You have been defeated.  Click Restart to play again.");
+      messageBoard.innerHTML = "Play again soon";
       newPlayerHealth.innerHTML = "Health: XXX";
       attackButton.style.color = "gray";
       attackButton.style.cursor = "not-allowed";
